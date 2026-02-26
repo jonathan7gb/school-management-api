@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,15 +30,15 @@ public class Student {
     private String registration;
 
     @Column(name = "data_nascimento", nullable = false)
-    private Date date_of_birth0;
+    private LocalDate dateOfBirth;
 
     @ManyToMany(mappedBy = "students")
     private List<Team> team = new ArrayList<>();
 
-    public Student(String name, String email, String registration, Date date_of_birth0) {
+    public Student(String name, String email, String registration, LocalDate dateOfBirth) {
         this.name = name;
         this.email = email;
         this.registration = registration;
-        this.date_of_birth0 = date_of_birth0;
+        this.dateOfBirth = dateOfBirth;
     }
 }
