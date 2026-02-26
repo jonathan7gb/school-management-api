@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity(name = "turma")
 @Data
 @AllArgsConstructor
@@ -25,6 +28,14 @@ public class Team {
     @ManyToOne
     @JoinColumn(name = "professor_id", nullable = false)
     private Teacher teacher;
+
+    @ManyToMany
+    @JoinTable(
+            name = "turma_aluno",
+            joinColumns = @JoinColumn(name = "turma_id"),
+            inverseJoinColumns = @JoinColumn(name = "aluno_id")
+    )
+    private List<Student> students = new ArrayList<>();
 
     public Team(String name, Course course, Teacher teacher) {
         this.name = name;

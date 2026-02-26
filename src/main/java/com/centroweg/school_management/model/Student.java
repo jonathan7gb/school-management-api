@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity(name = "aluno")
 @Data
@@ -28,6 +30,9 @@ public class Student {
 
     @Column(name = "data_nascimento", nullable = false)
     private Date date_of_birth0;
+
+    @ManyToMany(mappedBy = "students")
+    private List<Team> team = new ArrayList<>();
 
     public Student(String name, String email, String registration, Date date_of_birth0) {
         this.name = name;
