@@ -22,14 +22,14 @@ public class Lesson {
     private Team team;
 
     @Column(name = "data_hora", nullable = false)
-    private LocalDateTime date_time;
+    private LocalDateTime dateTime;
 
     @Column(name = "assunto", nullable = false)
     private String topic;
 
-    public Lesson(Team team, LocalDateTime date_time, String topic) {
+    public Lesson(Team team, LocalDateTime dateTime, String topic) {
         this.team = team;
-        this.date_time = date_time;
+        this.dateTime = dateTime;
         this.topic = topic;
     }
 }
