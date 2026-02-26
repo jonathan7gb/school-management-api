@@ -9,7 +9,6 @@ public record TeamResponseDTO(
         Long id,
         String name,
         CourseResponseDTO course,
-        TeacherResponseDTO teacher,
-        List<String> studentsName
+        TeacherResponseDTO teacher
 ) {
 }
