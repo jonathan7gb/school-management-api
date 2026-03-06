@@ -1,5 +1,6 @@
 package com.centroweg.school_management.dto.teacher;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -10,6 +11,7 @@ public record TeacherRequestDTO (
 
         @NotBlank(message = "O email é obrigatório")
         @NotNull(message = "O email não pode ser nulo")
+        @Email(message = "Formato de email inválido")
         String email,
 
         @NotBlank(message = "A disciplina do professor é obrigatória")

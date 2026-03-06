@@ -1,5 +1,6 @@
 package com.centroweg.school_management.dto.lesson;
 
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
