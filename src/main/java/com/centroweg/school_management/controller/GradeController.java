@@ -3,6 +3,7 @@ package com.centroweg.school_management.controller;
 import com.centroweg.school_management.dto.grade.GradeRequestDTO;
 import com.centroweg.school_management.dto.grade.GradeResponseDTO;
 import com.centroweg.school_management.service.GradeService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class GradeController {
     }
 
     @PostMapping
-    public GradeResponseDTO create(@RequestBody GradeRequestDTO dto) {
+    public GradeResponseDTO create(@RequestBody @Valid GradeRequestDTO dto) {
         return service.create(dto);
     }
 

@@ -3,6 +3,7 @@ package com.centroweg.school_management.controller;
 import com.centroweg.school_management.dto.teacher.TeacherRequestDTO;
 import com.centroweg.school_management.dto.teacher.TeacherResponseDTO;
 import com.centroweg.school_management.service.TeacherService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,13 +29,13 @@ public class TeacherController {
     }
 
     @PostMapping
-    public TeacherResponseDTO create(@RequestBody TeacherRequestDTO dto) {
+    public TeacherResponseDTO create(@RequestBody @Valid TeacherRequestDTO dto) {
         return service.create(dto);
     }
 
     @PutMapping("/{id}")
     public TeacherResponseDTO update(@PathVariable Long id,
-                                     @RequestBody TeacherRequestDTO dto) {
+                                     @RequestBody @Valid TeacherRequestDTO dto) {
         return service.update(id, dto);
     }
 

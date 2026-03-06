@@ -4,6 +4,7 @@ import com.centroweg.school_management.dto.course.CourseRequestDTO;
 import com.centroweg.school_management.dto.course.CourseResponseDTO;
 import com.centroweg.school_management.dto.team.TeamResponseDTO;
 import com.centroweg.school_management.service.CourseService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class CourseController {
     }
 
     @PostMapping
-    public CourseResponseDTO create(@RequestBody CourseRequestDTO dto) {
+    public CourseResponseDTO create(@RequestBody @Valid CourseRequestDTO dto) {
         return service.create(dto);
     }
 
